@@ -1,0 +1,6 @@
+.menu-bar, #menuList, #menuList:hover, .menu-item:hover  {
+    -fx-background-color: cornflowerblue;
+    -fx-text-fill: white;
+}
+
+

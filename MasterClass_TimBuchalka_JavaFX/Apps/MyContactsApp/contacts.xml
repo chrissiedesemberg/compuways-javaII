@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+<contact>
+	<first_name>Chrizelda</first_name>
+	<last_name>Desemberg</last_name>
+	<phone_number>0000000000</phone_number>
+	<notes>Notes</notes>
+</contact>
+<contact>
+	<first_name>Melissa</first_name>
+	<last_name>Heystek</last_name>
+	<phone_number>0824480719</phone_number>
+	<notes>Note</notes>
+</contact>
+<contact>
+	<first_name>Peter</first_name>
+	<last_name>Uys</last_name>
+	<phone_number>0824615629</phone_number>
+	<notes>Notes</notes>
+</contact>
+<contact>
+	<first_name>Test</first_name>
+	<last_name>Test</last_name>
+	<phone_number>Test</phone_number>
+	<notes>Test</notes>
+</contact>
+<contact>
+	<first_name>First Name</first_name>
+	<last_name>Last Name</last_name>
+	<phone_number>Phone number</phone_number>
+	<notes>Notes</notes>
+</contact>
+<contact>
+	<first_name>First Name</first_name>
+	<last_name>Last Name</last_name>
+	<phone_number>Phone number</phone_number>
+	<notes>Notes</notes>
+</contact>
+<contact>
+	<first_name>Quickadd test</first_name>
+	<last_name>QickaddTest</last_name>
+	<phone_number>Test</phone_number>
+	<notes>test</notes>
+</contact>
+</contacts>
