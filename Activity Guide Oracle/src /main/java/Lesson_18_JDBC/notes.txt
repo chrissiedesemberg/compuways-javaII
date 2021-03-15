@@ -1,0 +1,64 @@
+following the sequence
+shown in the slide:
+1. Use the DriverManager class to obtain a reference to a Connection object by using
+the getConnection method. The typical signature of this method is getConnection
+(url, name, password), where url is the JDBC URL, and name and password
+are strings that the database accepts for a connection.
+2. Use the Connection object (implemented by some class that the vendor provided) to
+obtain a reference to a Statement object through the createStatement method.
+The typical signature for this method is createStatement () with no arguments.
+3. Use the Statement object to obtain an instance of a ResultSet through an
+executeQuery (query) method. This method typically accepts a string (query),
+where query is a static string.
+
+
+Statement stmt = con.createStatement();
+• Use the Statement instance to execute a SQL query:
+ResultSet rs = stmt.executeQuery (query);
+
+• Note that there are three Statement execute methods:
+Method Returns Used for
+
+executeQuery(sqlString)     ResultSet           SELECT statement
+executeUpdate(sqlString)    int (rowsaffected)  INSERT, UPDATE, DELETE, or a DDL
+execute(sqlString)          boolean (true if     Any SQL command or command
+                            there was a
+                            ResultSet)
+
+PreparedStatement is a subclass of Statement that allows you to pass arguments to a precompiled SQL statement.
+
+The PreparedStatement provides two additional benefits:
+• Faster execution
+• Parameterized SQL Statements
+
+double value = 100_000.00;
+String query = "SELECT * FROM Employee WHERE Salary > ?";
+PreparedStatement pStmt = con.prepareStatement(query);
+pStmt.setDouble(1, value);
+ResultSet rs = pStmt.executeQuery();
+
+In general, there is a setXXX method for each type in the Java programming language.
+setXXX arguments:
+• The first argument indicates which question mark placeholder is to be set.
+• The second argument indicates the replacement value.
+
+For example:
+pStmt.setInt(1, 175);
+pStmt.setString(2,"Charles");
+
+PreparedStatement:Using a Loop to Set Values
+
+PreparedStatement updateEmp;
+String updateString = "update Employee"
++ "set SALARY= ? where EMP_NAME like ?";
+updateEmp = con.prepareStatement(updateString);
+int[] salary = {1750, 1500, 6000, 1550, 9050};
+String[] names = {"David", "Tom", "Nick“,
+"Harry", "Mark"};
+for(int i:names)
+{
+updateEmp.setInt(1, salary[i]);
+updateEmp.setString(2, names[i]);
+updateEmp.executeUpdate();
+}
+
